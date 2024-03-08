@@ -20,3 +20,5 @@ use App\Http\Controllers\Api\RiderLocationController;
 // });
 
 Route::apiResource('rider-locations',RiderLocationController::class)->only(['store']);
+Route::post('nearest-rider', '\App\Http\Controllers\Api\RestaurantLocationController@getNearestRider')
+    ->name('restaurant.nearest.rider');

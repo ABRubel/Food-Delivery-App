@@ -4,7 +4,7 @@ namespace App\Exceptions;
 
 use Exception;
 
-class RiderLocationException extends Exception
+class RestaurantLocationException extends Exception
 {
     
 }
