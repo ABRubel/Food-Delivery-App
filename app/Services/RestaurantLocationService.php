@@ -2,6 +2,7 @@
 
 namespace App\Services;
 use App\Exceptions\RestaurantLocationException;
+use App\Helpers\Helper;
 use App\Models\RestaurantLocation;
 use App\Models\RiderLocation;
 use Illuminate\Support\Facades\Cache;
@@ -49,6 +50,8 @@ class RestaurantLocationService
         asort($distances);
 
         $closest = $locations[key($distances)];
+        $distance = Helper::distance($restaurantLocation?->lat, $restaurantLocation?->long, $closest['lat'], $closest['long']);
+        $closest['distance'] = $distance . " in kilometers";
 
         return $closest;
     }
