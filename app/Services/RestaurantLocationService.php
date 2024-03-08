@@ -5,7 +5,6 @@ use App\Exceptions\RestaurantLocationException;
 use App\Models\RestaurantLocation;
 use App\Models\RiderLocation;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\DB;
 
 class RestaurantLocationService
 {
