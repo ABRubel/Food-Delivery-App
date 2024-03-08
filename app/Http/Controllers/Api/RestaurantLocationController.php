@@ -26,7 +26,7 @@ class RestaurantLocationController extends Controller
         try {
             $location = $this->service->getLocation($request->restaurant_id);
 
-            return response()->json($location, 200);
+            return response()->json(['message' => 'Nearest rider is found.', 'location' => $location], 200);
         } catch (RestaurantLocationException $e) {
             return response()->json(['message' => $e->getMessage()], 401);
         } catch (Exception $e) {
