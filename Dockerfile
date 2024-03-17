@@ -1,7 +1,7 @@
 FROM php:8.2-fpm
 
 ARG user
-ARG xuid
+ARG uid
 
 # http to https secure connection while installing packages
 RUN sed -i s/http/https/g /etc/apt/sources.list.d/debian.sources
